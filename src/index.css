@@ -40,10 +40,17 @@ body {
   padding: 0.625rem;
 }
 
-.nav li a {
+a {
   text-decoration: none;
-  color: inherit;
   font-family: inherit;
+  color: inherit;
+}
+
+.nav a.active {
+  border-bottom: 0.1875rem solid #ab3115;
+  padding-bottom: 0.4375rem;
+  border-bottom-right-radius: 40%;
+  border-bottom-left-radius: 40%;
 }
 
 .nav .searchbar {
@@ -75,14 +82,10 @@ body {
   justify-content: space-between;
   border: 1px solid #ad4a26;
 }
+
 .recipe-title h2 {
   text-decoration: none;
-  color: inherit;
-}
-
-h2 .recipe-title {
-  font-size: 1.25rem;
-  margin-left: 0.625rem;
+  color: black;
 }
 
 .recipe-content {
