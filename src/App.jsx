@@ -6,19 +6,22 @@ import Recipes from "./pages/Recipes";
 import Recipe from "./pages/Recipe";
 import AboutUs from "./pages/AboutUs";
 import PageNotFound from "./pages/PageNotFound";
-
+import Alert from "./components/Alert";
 export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<DefaultLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/recipes" element={<Recipes />} />
-          <Route path="/recipes/:id" element={<Recipe />} />
-          <Route path="/about-us" element={<AboutUs />} />
-        </Route>
-        <Route path="*" element={<PageNotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <>
+      <Alert message="Test Alert" type="added" />
+      <BrowserRouter>
+        <Routes>
+          <Route element={<DefaultLayout />}>
+            <Route index element={<Home />} />
+            <Route path="/recipes" element={<Recipes />} />
+            <Route path="/recipes/:id" element={<Recipe />} />
+            <Route path="/about-us" element={<AboutUs />} />
+          </Route>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </>
   );
 }
