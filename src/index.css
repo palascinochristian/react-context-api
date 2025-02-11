@@ -13,7 +13,6 @@
 
 body {
   font-family: "Montserrat", serif;
-  /* font-size: 1.1rem; */
   color: #000;
   background-color: #f6aa63;
   font-family: "Montserrat", serif;
@@ -24,10 +23,16 @@ body {
   margin: 0 auto;
 }
 
-.nav ul {
-  max-width: 80%;
+.nav {
+  background-color: #ad4a26;
   display: flex;
-  justify-content: center;
+  padding: 1.25rem;
+  justify-content: end;
+  gap: 0.9375rem;
+  border-bottom: 2px solid #ab3115;
+}
+.nav ul {
+  display: flex;
 }
 
 .nav li {
@@ -38,6 +43,13 @@ body {
 .nav li a {
   text-decoration: none;
   color: inherit;
+  font-family: inherit;
+}
+
+.nav .searchbar {
+  border: 0.125rem solid #ab3115;
+  border-radius: 0.9375rem;
+  text-indent: 0.5rem;
 }
 
 .recipeList {

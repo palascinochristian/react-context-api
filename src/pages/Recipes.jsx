@@ -1,9 +1,11 @@
 import Card from "../components/Card";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useSearchContext } from "../contexts/SearchContext";
 
 export default function Recipes() {
   const [recipesList, setRecipeList] = useState([]);
+  const { search } = useSearchContext();
 
   // Richiesta API al backend per .json con array di oggetti (recipes)
   const fetchRecipes = () => {
@@ -16,6 +18,11 @@ export default function Recipes() {
   useEffect(() => {
     fetchRecipes();
   }, []);
+
+  // Filtro per la ricerca
+  const recipesListFiltered = recipesList.filter((recipe) =>
+    recipe.title.toLowerCase().includes(search.toLowerCase())
+  );
 
   // Inizializzo una variabile per il form
   const [formData, setFormData] = useState({
@@ -61,7 +68,7 @@ export default function Recipes() {
   return (
     <div className="container">
       <div className="recipeList">
-        {recipesList.map((recipe) => (
+        {recipesListFiltered.map((recipe) => (
           <Card key={recipe.id} recipe={recipe} deleteRecipe={deleteRecipe} />
         ))}
 
