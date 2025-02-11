@@ -1,0 +1,138 @@
+/*---------------
+      RESET 
+---------------*/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/*---------------
+      GENERAL 
+---------------*/
+
+body {
+  font-family: "Montserrat", serif;
+  /* font-size: 1.1rem; */
+  color: #000;
+  background-color: #f6aa63;
+  font-family: "Montserrat", serif;
+}
+
+.container {
+  max-width: 75rem;
+  margin: 0 auto;
+}
+
+.nav ul {
+  max-width: 80%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav li {
+  list-style: none;
+  padding: 0.625rem;
+}
+
+.nav li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.recipeList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1.25rem;
+  border: 2px solid #cc6a08;
+  border-radius: 0.125rem;
+  padding: 1.875rem;
+  background-image: url(../bg.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.recipe {
+  background-color: #f6aa63;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  min-width: 50%;
+  margin-bottom: 0.625rem;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #ad4a26;
+}
+.recipe-title h2 {
+  text-decoration: none;
+  color: inherit;
+}
+
+h2 .recipe-title {
+  font-size: 1.25rem;
+  margin-left: 0.625rem;
+}
+
+.recipe-content {
+  background-image: url(/paperbj.jpg);
+  padding: 0.3125rem 0.625rem;
+  border-radius: 0.3125rem;
+  width: 50%;
+  font-style: oblique;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  line-height: 1.48;
+  margin-bottom: 0.625rem;
+}
+
+.recipe-image img {
+  width: 80%;
+  border-radius: 12rem;
+  border: 2px solid #ad4a26;
+  display: flex;
+  justify-self: center;
+}
+
+.recipe-tags {
+  color: #ab3115;
+}
+
+.recipe button {
+  border: none;
+  background-color: #f2f7fb;
+  width: 10%;
+  cursor: pointer;
+}
+
+form input {
+  padding: 0.3125rem 0.4375rem;
+  margin-right: 0.25rem;
+}
+
+form button {
+  margin-top: 0.625rem;
+  padding: 0.3125rem 0.4375rem;
+  border: 2px solid #ad4a26;
+  cursor: pointer;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: 2px solid #ad4a26;
+  padding: 1.25rem;
+  border-radius: 0.3125rem;
+  background-color: #f6aa63;
+}
+form label {
+  text-align: center;
+}
+#content {
+  width: 100%;
+  min-height: 100px;
+  resize: vertical;
+  font-size: inherit;
+  padding: 0.3125rem;
+}
