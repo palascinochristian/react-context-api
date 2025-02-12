@@ -2,10 +2,12 @@ import Card from "../components/Card";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useSearchContext } from "../contexts/SearchContext";
+import { useAlertContext } from "../contexts/AlertContext";
 
 export default function Recipes() {
   const [recipesList, setRecipeList] = useState([]);
   const { search } = useSearchContext();
+  const { setAlertData } = useAlertContext();
 
   // Richiesta API al backend per .json con array di oggetti (recipes)
   const fetchRecipes = () => {
@@ -18,6 +20,14 @@ export default function Recipes() {
   useEffect(() => {
     fetchRecipes();
   }, []);
+
+  //useEffect per l'alert generico
+  useEffect(() => {
+    setAlertData({
+      type: "info",
+      message: "Le nostre ricette sono in continuo aggiornamento",
+    });
+  }, [setAlertData]);
 
   // Filtro per la ricerca
   const recipesListFiltered = recipesList.filter((recipe) =>
@@ -51,6 +61,10 @@ export default function Recipes() {
         image: "",
         tags: [],
       });
+      setAlertData({
+        type: "added",
+        message: `Hai aggiunto ${res.data.title} alla lista delle ricette!`,
+      });
     });
   };
 
@@ -62,6 +76,10 @@ export default function Recipes() {
         setRecipeList((current) =>
           current.filter((recipe) => recipe.id !== recipeToDelete.id)
         );
+        setAlertData({
+          type: "deleted",
+          message: `Hai eliminato ${recipeToDelete.title} dalla lista delle ricette!`,
+        });
       });
   };
 

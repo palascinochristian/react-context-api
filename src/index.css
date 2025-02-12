@@ -16,6 +16,7 @@ body {
   color: #000;
   background-color: #f6aa63;
   font-family: "Montserrat", serif;
+  height: 100vh;
 }
 
 .container {
@@ -164,20 +165,36 @@ form label {
 /*---------------
       ALERT
 ---------------*/
+
 .alert-info {
-  background-color: lightskyblue;
-  color: blue;
+  background-color: rgb(21, 106, 159);
+  color: white;
   padding: 0.5rem;
 }
 
 .alert-added {
-  background-color: lightgreen;
-  color: green;
+  background-color: rgba(5, 63, 5, 0.996);
+  color: white;
   padding: 0.5rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .alert-deleted {
-  background-color: rgb(221, 86, 86);
-  color: red;
+  background-color: rgb(153, 19, 19);
+  color: white;
   padding: 0.5rem;
+  position: fixed; /* `fixed` funziona meglio per il centro della viewport */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.closeBtn {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+  margin-left: 0.5rem;
 }

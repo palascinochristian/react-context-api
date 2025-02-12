@@ -1,11 +1,29 @@
-export default function Alert({ type = "info", message = "" }) {
+import { useAlertContext } from "../contexts/AlertContext";
+
+export default function Alert() {
+  const { alertData, setAlertData } = useAlertContext();
+  const { type, message } = alertData;
+
   const classes = {
     info: "alert-info",
     added: "alert-added",
     deleted: "alert-deleted",
   };
 
-  if (!message) return null;
+  const handleAlertClose = () => {
+    setAlertData({ type: "info", message: "" });
+  };
 
-  return <div className={classes[type]}>{message}</div>;
+  if (!alertData.message) return null;
+
+  return (
+    <div className="alert">
+      <div className={classes[type]}>
+        {message}
+        <button className="closeBtn" onClick={handleAlertClose}>
+          ❌
+        </button>
+      </div>
+    </div>
+  );
 }
